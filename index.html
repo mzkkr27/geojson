@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Peta Penduduk Kota Lhokseumawe</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+#sidebar {
+  width: 320px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,.2);
+  z-index: 1000;
+}
+
+#map {
+  flex: 1;
+}
+
+.btn {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #000751;
+  color: white;
+  cursor: pointer;
+}
+
+.legend {
+  background: white;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  border: 1px solid #555;
+}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+  <div id="sidebar">
+    <h2>Peta Lhokseumawe</h2>
+    <button class="btn" onclick="setDataset('penduduk')">Jumlah Penduduk</button>
+    <button class="btn" onclick="setDataset('laki')">Laki-laki</button>
+    <button class="btn" onclick="setDataset('perempuan')">Perempuan</button>
+    <button class="btn" onclick="setDataset('kepadatan')">Kepadatan</button>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<!-- LIBRARY -->
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- APP -->
+<script src="app.js"></script>
+
+</body>
+</html>
